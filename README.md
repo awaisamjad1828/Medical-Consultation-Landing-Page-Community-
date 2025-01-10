@@ -46,3 +46,6 @@ Footer Completion:
 
 Finalize and test the footer for links and social media icons.
 Let me know if you'd like to explore specific enhancements or need help styling the page further!
+
+figma link HERE !
+https://www.figma.com/design/yqjny96OCm3wRcgRKFkri1/Medical-Consultation-Landing-Page-(Community)?node-id=1-371&m=dev
