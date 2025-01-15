@@ -1,0 +1,81 @@
+.container{
+    width: 900px;
+    height: 510px;
+    margin: 0px auto;
+    background: #f2f8f8;
+    border: 1px solid black;
+    margin-top: 20px;
+    border-radius: 20px;   
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ 
+}
+.content{
+    display: flex;
+    justify-content: space-around;
+}
+.inputfield{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.semesterinput{
+    padding-left: 130px;
+}
+.semesterinput input{
+    width: 280px;
+    height: 29px;
+    padding-left: 20px;
+}
+.gpainput{
+    padding-left: 160px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+}
+.gpainput input{
+    width: 120px;
+    height: 29px;
+    padding-left: 20px;
+
+}
+.gpainput button{
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    border: 1px solid blue;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+
+.calculatebtn{
+    padding-left: 400px;
+}
+
+.calculatebtn button{
+    background-color: red;
+    color: white;
+    padding: 10px 14px;
+    border: 1px solid white;
+    border-radius: 12px;
+    font-size: 22px;
+    cursor: pointer;
+}
+.result{
+    display: flex;
+}
+
+.resultbox{
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 320px;
+    height: 40px;
+    background-color: #f2f8f8;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: flex;                /* Enable flexbox */
+    justify-content: center;      /* Center horizontally */
+    align-items: center;  
+}

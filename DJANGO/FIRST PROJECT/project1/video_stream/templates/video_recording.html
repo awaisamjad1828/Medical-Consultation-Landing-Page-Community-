@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Recorder</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-start {
+            background-color: green;
+            color: white;
+        }
+
+        .btn-start:hover {
+            background-color: darkgreen;
+        }
+
+        .btn-stop {
+            background-color: red;
+            color: white;
+        }
+
+        .btn-stop:hover {
+            background-color: darkred;
+        }
+
+        #status {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #status.success {
+            color: green;
+        }
+
+        #status.error {
+            color: red;
+        }
+
+        #video-stream {
+            width: 640px;
+            height: 480px;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Video Recorder</h1>
+    <button id="start-btn" class="btn btn-start">Start Recording</button>
+    <button id="stop-btn" class="btn btn-stop" disabled>Stop Recording</button>
+    <p id="status"></p>
+
+    <!-- Video feed from the camera -->
+    <img id="video-stream" src="{% url 'video_feed' %}" alt="Video Feed" />
+
+    <script>
+        $('#start-btn').click(function() {
+            $.ajax({
+                url: '/video-recording/',
+                type: 'POST',
+                data: {
+                    action: 'start',
+                    csrfmiddlewaretoken: '{{ csrf_token }}'
+                },
+                success: function(response) {
+                    $('#status').text(response.status).removeClass('error').addClass('success');
+                    $('#start-btn').prop('disabled', true);  // Disable start button
+                    $('#stop-btn').prop('disabled', false);  // Enable stop button
+                },
+                error: function(xhr) {
+                    $('#status').text('Error: ' + xhr.responseJSON.status).removeClass('success').addClass('error');
+                }
+            });
+        });
+
+        $('#stop-btn').click(function() {
+            $.ajax({
+                url: '/video-recording/',
+                type: 'POST',
+                data: {
+                    action: 'stop',
+                    csrfmiddlewaretoken: '{{ csrf_token }}'
+                },
+                success: function(response) {
+                    $('#status').text(response.status).removeClass('error').addClass('success');
+                    $('#start-btn').prop('disabled', false);  // Enable start button
+                    $('#stop-btn').prop('disabled', true);   // Disable stop button
+                },
+                error: function(xhr) {
+                    $('#status').text('Error: ' + xhr.responseJSON.status).removeClass('success').addClass('error');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

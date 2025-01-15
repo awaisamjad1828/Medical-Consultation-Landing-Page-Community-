@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Recording</title>
+    <script>
+        function sendAction(action) {
+            fetch("", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "X-CSRFToken": "{{ csrf_token }}"
+                },
+                body: `action=${action}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.status);  // Display the response status
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Something went wrong!");
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Video Recording</h1>
+    <button onclick="sendAction('start')">Start Recording</button>
+    <button onclick="sendAction('stop')">Stop Recording</button>
+</body>
+</html>

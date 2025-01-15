@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCTV Live Stream</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .video-container {
+      position: relative;
+      overflow: hidden;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.25s ease;
+    }
+
+    .controls {
+      margin-top: 10px;
+    }
+
+    .zoom-btn {
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 0 10px;
+    }
+
+    .zoom-btn:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  
+  <h1>CCTV Live Stream</h1>
+
+  <!-- Video Container -->
+  <div class="video-container">
+    <iframe src="http://192.168.1.10:4747/video" width="800" height="600"></iframe>
+
+  </div>
+
+  <!-- Zoom Controls -->
+  <div class="controls">
+    <button class="zoom-btn" id="zoomIn">Zoom In</button>
+    <button class="zoom-btn" id="zoomOut">Zoom Out</button>
+  </div>
+
+  <script>
+    let zoomLevel = 1;
+
+    const zoomInBtn = document.getElementById("zoomIn");
+    const zoomOutBtn = document.getElementById("zoomOut");
+    const videoFeed = document.getElementById("videoFeed");
+
+    // Zoom In Functionality
+    zoomInBtn.addEventListener("click", () => {
+      zoomLevel += 0.1;
+      videoFeed.style.transform = `scale(${zoomLevel})`;
+    });
+
+    // Zoom Out Functionality
+    zoomOutBtn.addEventListener("click", () => {
+      zoomLevel = zoomLevel > 0.1 ? zoomLevel - 0.1 : 0.1; // Avoid zooming out too much
+      videoFeed.style.transform = `scale(${zoomLevel})`;
+    });
+  </script>
+
+</body>
+</html>

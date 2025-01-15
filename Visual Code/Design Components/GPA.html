@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA CALCULATE</title>
+    <link rel="stylesheet" href="cgpa.css">
+        <!--====== font awsome======= -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" data-purpose="Layout StyleSheet" title="Web Awesome" href="/css/app-wa-2e45578ecf3b28ce6383d10b8c0bf4d0.css?vsn=d">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
+    <!--====== font awsome======= -->
+
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>SEMESTER NAME</h1>
+            <h1>GPA</h1>    
+        </div>
+        <div class="inputfield">
+            <div class="semesterinput">
+                <input type="text" name="name" id="name" placeholder="ENTER YOUR SEMESTER NAME!">
+            </div>
+            <div class="gpainput">
+                <input type="number" name="gpa" id="gpa1" placeholder="ENTER  HERE!">
+                <button><i class="fa-light fa-trash"></i></button>
+            </div>
+        </div>
+        <div class="inputfield">
+            <div class="semesterinput">
+                <input type="text" name="name" id="name" placeholder="ENTER YOUR SEMESTER NAME!">
+            </div>
+            <div class="gpainput">
+                <input type="number" name="gpa" id="gpa2" placeholder="ENTER HERE!">
+                <button><i class="fa-light fa-trash"></i></button>
+
+            </div>
+        </div>
+        <div class="inputfield">
+            <div class="semesterinput">
+                <input type="text" name="name" id="name" placeholder="ENTER YOUR SEMESTER NAME!">
+            </div>
+            <div class="gpainput">
+                <input type="number" name="gpa" id="gpa3" placeholder="ENTER HERE!">
+                <button><i class="fa-light fa-trash"></i></button>
+
+            </div>
+        </div>
+        <div class="inputfield">
+            <div class="semesterinput">
+                <input type="text" name="name" id="" placeholder="ENTER YOUR SEMESTER NAME!">
+            </div>
+            <div class="gpainput">
+                <input type="number" name="gpa" id="gpa4" placeholder="ENTER HERE!">
+                <button><i class="fa-light fa-trash"></i></button>
+
+            </div>
+        </div>
+        <div class="inputfield">
+            <div class="semesterinput">
+                <input type="text" name="name" id="name" placeholder="ENTER YOUR SEMESTER NAME!">
+            </div>
+            <div class="gpainput">
+                <input type="number" name="gpa" id="gpa5" placeholder="ENTER HERE!">
+                <button><i class="fa-light fa-trash"></i></button>
+
+            </div>
+        </div>
+        <div class="calculatebtn">
+            <button onclick="calculateCGPA()">CALCULATE</button>
+        </div>
+    </div>
+    <div class="result" id="resultbox">
+        <h1>YOUR CURRENT CGPA IS:</h1>
+        <div class="resultbox">
+            <h1 id="result"></h1>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
